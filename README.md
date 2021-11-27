@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# Restaurant Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This project is developed with -
 
-## Available Scripts
+-   React (CRA)
+-   Rect Router
+-   Typescript
+-   Ant Design
+-   Redux
+-   Redux Thunk
+-   Redux Persist
+-   Axios
+-   MUI styling (Stand alone css-in-js solution)
+-   Eslint
+-   Prettier
+-   Jest
 
-In the project directory, you can run:
+## Important points
 
-### `yarn start`
+1. We have used `Redux Persist` to make our app persist, so that the user may have easier experience.
+2. We have used `Redux Thunk` to execute async operation through redux.
+3. We have integrated `Eslint` and `Prettier` for a consistent convention for coding throughout the app.
+4. For styling purpose we have used MUI styling. This standalone solution provides us with different API for styling. More info can be found [here](https://mui.com/styles/basics/#why-use-muis-styling-solution).
+5. Note that, there are mainly two folders in our project's structure to develop components for the app. `atoms` folder will mainly consist of the most basic component which are needed for the app. i.e- input, button etc. On the other hand, `views` will consists of more complex component. i.e- page component, component which consists of other components etc.
+6. `hooks` folder is mainly for developing reusable stateful logic both for generic cases and app specific cases.
+7. `styles` folder will contain the reusable stylings for the app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setup
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repo and run `yarn install`
+2. Run `yarn start` to start the app
+3. To build the project for production run `yarn build`
