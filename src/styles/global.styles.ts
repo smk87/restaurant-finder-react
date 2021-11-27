@@ -2,10 +2,12 @@
 // Library imports
 import { createStyles, makeStyles } from '@mui/styles';
 import { useLayoutStyles } from './common';
+import { useHelperStyles } from './helper';
 
 const useStyles = makeStyles(() =>
 	createStyles({
 		...useLayoutStyles(),
+		...useHelperStyles(),
 	})
 );
 

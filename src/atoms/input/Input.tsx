@@ -5,7 +5,7 @@ import { Input as InputComponent } from 'antd';
 // File imports
 import { InputProps } from './Input.types';
 
-export const Input = ({ id, onChange, type, value, name, className, style }: InputProps): ReactElement => {
+export const Input = ({ id, onChange, type, value, name, className, style, placeHolder }: InputProps): ReactElement => {
 	return (
 		<InputComponent
 			className={className}
@@ -15,6 +15,7 @@ export const Input = ({ id, onChange, type, value, name, className, style }: Inp
 			type={type}
 			value={value}
 			onChange={onChange}
+			placeholder={placeHolder}
 		/>
 	);
 };

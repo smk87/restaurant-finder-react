@@ -7,4 +7,5 @@ export interface InputProps extends Stylable {
 	type?: string;
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	name?: string;
+	placeHolder?: string;
 }
