@@ -9,7 +9,7 @@ import { useGlobalStyles } from 'styles';
 import { combineClasses } from 'utils';
 
 export const Root = (): ReactElement => {
-	const { root, searchFieldWrapper, buttonWrapper, button } = useStyles();
+	const { root, searchFieldWrapper, searchField, buttonWrapper, button } = useStyles();
 	const { textCenter, fullWidth } = useGlobalStyles();
 
 	return (
@@ -20,12 +20,16 @@ export const Root = (): ReactElement => {
 				</Col>
 			</Row>
 
-			<Row className={combineClasses(fullWidth, searchFieldWrapper)} justify='center'>
-				<Col span={5}>
+			<Row
+				className={combineClasses(fullWidth, searchFieldWrapper)}
+				justify='center'
+				gutter={[{ xs: 0 }, { xs: 16, sm: 16 }]}
+			>
+				<Col xs={24} md={10} lg={8}>
 					<Input placeHolder='Enter a restaurant name' />
 				</Col>
 
-				<Col span={4} className={buttonWrapper}>
+				<Col xs={24} md={4} className={buttonWrapper}>
 					<div className={button}>
 						<Button>Search</Button>
 					</div>

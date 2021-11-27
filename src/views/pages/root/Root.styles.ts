@@ -12,9 +12,11 @@ export const useStyles = makeStyles(() =>
 		searchFieldWrapper: {
 			marginTop: '4rem',
 		},
+		searchField: {},
 		buttonWrapper: {
 			display: 'flex',
 			justifyContent: 'center',
+			padding: '0 8rem',
 		},
 		button: {
 			margin: '0 1rem',
