@@ -12,7 +12,6 @@ export const useStyles = makeStyles(() =>
 		searchFieldWrapper: {
 			marginTop: '4rem',
 		},
-		searchField: {},
 		buttonWrapper: {
 			display: 'flex',
 			justifyContent: 'center',

@@ -9,7 +9,7 @@ import { useGlobalStyles } from 'styles';
 import { combineClasses } from 'utils';
 
 export const Root = (): ReactElement => {
-	const { root, searchFieldWrapper, searchField, buttonWrapper, button } = useStyles();
+	const { root, searchFieldWrapper, buttonWrapper, button } = useStyles();
 	const { textCenter, fullWidth } = useGlobalStyles();
 
 	return (
