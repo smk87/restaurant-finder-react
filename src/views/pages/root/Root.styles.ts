@@ -8,6 +8,7 @@ export const useStyles = makeStyles(() =>
 			display: 'flex',
 			flexDirection: 'column',
 			justifyContent: 'center',
+			padding: '0 1rem',
 		},
 		searchFieldWrapper: {
 			marginTop: '4rem',
@@ -19,6 +20,9 @@ export const useStyles = makeStyles(() =>
 		},
 		button: {
 			margin: '0 1rem',
+		},
+		mapWrapper: {
+			marginTop: '4rem',
 		},
 	})
 );

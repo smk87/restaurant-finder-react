@@ -7,31 +7,18 @@ import { Button, Input } from 'atoms';
 import { useStyles } from './Root.styles';
 import { useGlobalStyles } from 'styles';
 import { combineClasses } from 'utils';
-// import { placesApi } from 'apis/places';
+import { Map } from 'views/components';
+import { mapConfigs } from 'config/mapConfigs';
 
 export const Root = (): ReactElement => {
-	const { root, searchFieldWrapper, buttonWrapper, button } = useStyles();
+	const { root, searchFieldWrapper, buttonWrapper, button, mapWrapper } = useStyles();
 	const { textCenter, fullWidth } = useGlobalStyles();
-
-	// const handleAutoFind = async () => {
-	// 	try {
-	// 		const response = await placesApi.autoFind({
-	// 			params: {
-	// 				ll: '23.8103,90.4125',
-	// 				radius: 3000,
-	// 				categories: 13065,
-	// 			},
-	// 		});
-	// 	} catch (error) {
-	// 		//
-	// 	}
-	// };
 
 	return (
 		<div className={root}>
 			<Row className={fullWidth}>
 				<Col flex={24}>
-					s<h1 className={textCenter}>Find a near restaurant</h1>
+					<h1 className={textCenter}>Find a near restaurant</h1>
 				</Col>
 			</Row>
 
@@ -50,12 +37,19 @@ export const Root = (): ReactElement => {
 					</div>
 
 					<div className={button}>
-						<Button
-						// onClick={handleAutoFind}
-						>
-							Auto Find
-						</Button>
+						<Button>Auto Find</Button>
 					</div>
+				</Col>
+			</Row>
+
+			<Row justify='center'>
+				<Col className={mapWrapper} xs={24} md={20}>
+					<Map
+						center={{
+							lat: mapConfigs.YOUR_LOCATION.LATITUDE,
+							lng: mapConfigs.YOUR_LOCATION.LONGITUDE,
+						}}
+					/>
 				</Col>
 			</Row>
 		</div>
