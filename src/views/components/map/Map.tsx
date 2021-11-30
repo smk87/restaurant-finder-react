@@ -8,6 +8,7 @@ import { useStyles } from './Map.styles';
 import { envs, map } from 'configs';
 
 const { DEFAULT_ZOOM, YOUR_LOCATION } = map;
+const yourPosition = { lat: YOUR_LOCATION.LATITUDE, lng: YOUR_LOCATION.LONGITUDE };
 
 export const Map = ({ center, zoom = DEFAULT_ZOOM, markers }: MapProps): ReactElement => {
 	const { yourLocation, mapContainer } = useStyles();
@@ -16,14 +17,16 @@ export const Map = ({ center, zoom = DEFAULT_ZOOM, markers }: MapProps): ReactEl
 		<LoadScript googleMapsApiKey={envs.GOOGLE_MAP_API_KEY || ''}>
 			<GoogleMap mapContainerClassName={mapContainer} center={center} zoom={zoom}>
 				{/* Child components, such as markers, info windows, etc. */}
-				<InfoWindow position={center}>
-					<div className={yourLocation}>
-						<h4>{YOUR_LOCATION.LABEL}</h4>
-					</div>
-				</InfoWindow>
+				{markers?.length === 0 && (
+					<InfoWindow position={yourPosition}>
+						<div className={yourLocation}>
+							<h4>{YOUR_LOCATION.LABEL}</h4>
+						</div>
+					</InfoWindow>
+				)}
 
 				<Circle
-					center={center}
+					center={yourPosition}
 					options={{
 						strokeColor: 'blue',
 						strokeOpacity: 1,
@@ -40,7 +43,7 @@ export const Map = ({ center, zoom = DEFAULT_ZOOM, markers }: MapProps): ReactEl
 				/>
 
 				<Circle
-					center={center}
+					center={yourPosition}
 					options={{
 						strokeColor: 'blue',
 						strokeOpacity: 0.5,

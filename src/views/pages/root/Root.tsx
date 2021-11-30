@@ -1,6 +1,7 @@
 // Library imports
 import React, { ReactElement } from 'react';
 import { Col, Row } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
 
 // File imports
 import { Button, Input } from 'atoms';
@@ -9,12 +10,41 @@ import { useGlobalStyles } from 'styles';
 import { combineClasses } from 'utils';
 import { Map } from 'views/components';
 import { map } from 'configs';
+import { dispatchers } from 'store/restaurant';
+import { RootState } from 'store/store.types';
 
 const { YOUR_LOCATION } = map;
 
 export const Root = (): ReactElement => {
+	const searchedRestaurant = useSelector((state: RootState) => state.restaurant.searchResult);
+	const dispatch = useDispatch();
+
 	const { root, searchFieldWrapper, buttonWrapper, button, mapWrapper } = useStyles();
 	const { textCenter, fullWidth } = useGlobalStyles();
+
+	const handleAutoSearch = () => {
+		dispatch(dispatchers.autoSearch());
+	};
+
+	const mapProps = searchedRestaurant
+		? {
+				center: {
+					lat: searchedRestaurant.latitude,
+					lng: searchedRestaurant.longitude,
+				},
+				markers: [
+					{
+						lat: searchedRestaurant.latitude,
+						lng: searchedRestaurant.longitude,
+					},
+				],
+		  }
+		: {
+				center: {
+					lat: YOUR_LOCATION.LATITUDE,
+					lng: YOUR_LOCATION.LONGITUDE,
+				},
+		  };
 
 	return (
 		<div className={root}>
@@ -39,19 +69,14 @@ export const Root = (): ReactElement => {
 					</div>
 
 					<div className={button}>
-						<Button>Auto Find</Button>
+						<Button onClick={handleAutoSearch}>Auto Find</Button>
 					</div>
 				</Col>
 			</Row>
 
 			<Row justify='center'>
 				<Col className={mapWrapper} xs={24} md={20}>
-					<Map
-						center={{
-							lat: YOUR_LOCATION.LATITUDE,
-							lng: YOUR_LOCATION.LONGITUDE,
-						}}
-					/>
+					<Map {...mapProps} />
 				</Col>
 			</Row>
 		</div>

@@ -7,3 +7,6 @@ export type Restaurant = {
 export type RestaurantState = {
 	searchResult: Restaurant | null;
 };
+
+// Merges all the action return type
+export type RestaurantActionReturnType = Restaurant;
