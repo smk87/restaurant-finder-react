@@ -8,9 +8,9 @@ import { useStyles } from './Root.styles';
 import { useGlobalStyles } from 'styles';
 import { combineClasses } from 'utils';
 import { Map } from 'views/components';
-import { mapConfigs } from 'config';
+import { map } from 'configs';
 
-const { YOUR_LOCATION } = mapConfigs;
+const { YOUR_LOCATION } = map;
 
 export const Root = (): ReactElement => {
 	const { root, searchFieldWrapper, buttonWrapper, button, mapWrapper } = useStyles();

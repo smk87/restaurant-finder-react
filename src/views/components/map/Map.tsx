@@ -5,10 +5,9 @@ import { GoogleMap, LoadScript, Marker, InfoWindow, Circle } from '@react-google
 // File imports
 import { MapProps } from './Map.types';
 import { useStyles } from './Map.styles';
-import { envs } from 'config';
-import { mapConfigs } from 'config';
+import { envs, map } from 'configs';
 
-const { DEFAULT_ZOOM, YOUR_LOCATION } = mapConfigs;
+const { DEFAULT_ZOOM, YOUR_LOCATION } = map;
 
 export const Map = ({ center, zoom = DEFAULT_ZOOM, markers }: MapProps): ReactElement => {
 	const { yourLocation, mapContainer } = useStyles();
