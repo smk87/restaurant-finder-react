@@ -8,7 +8,9 @@ import { useStyles } from './Root.styles';
 import { useGlobalStyles } from 'styles';
 import { combineClasses } from 'utils';
 import { Map } from 'views/components';
-import { mapConfigs } from 'config/mapConfigs';
+import { mapConfigs } from 'config';
+
+const { YOUR_LOCATION } = mapConfigs;
 
 export const Root = (): ReactElement => {
 	const { root, searchFieldWrapper, buttonWrapper, button, mapWrapper } = useStyles();
@@ -46,8 +48,8 @@ export const Root = (): ReactElement => {
 				<Col className={mapWrapper} xs={24} md={20}>
 					<Map
 						center={{
-							lat: mapConfigs.YOUR_LOCATION.LATITUDE,
-							lng: mapConfigs.YOUR_LOCATION.LONGITUDE,
+							lat: YOUR_LOCATION.LATITUDE,
+							lng: YOUR_LOCATION.LONGITUDE,
 						}}
 					/>
 				</Col>

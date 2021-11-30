@@ -6,7 +6,7 @@ import { GoogleMap, LoadScript, Marker, InfoWindow, Circle } from '@react-google
 import { MapProps } from './Map.types';
 import { useStyles } from './Map.styles';
 import { envs } from 'config';
-import { mapConfigs } from 'config/mapConfigs';
+import { mapConfigs } from 'config';
 
 const { DEFAULT_ZOOM, YOUR_LOCATION } = mapConfigs;
 
@@ -22,6 +22,23 @@ export const Map = ({ center, zoom = DEFAULT_ZOOM, markers }: MapProps): ReactEl
 						<h4>{YOUR_LOCATION.LABEL}</h4>
 					</div>
 				</InfoWindow>
+
+				<Circle
+					center={center}
+					options={{
+						strokeColor: 'blue',
+						strokeOpacity: 1,
+						strokeWeight: 2,
+						fillColor: 'blue',
+						fillOpacity: 0.5,
+						clickable: false,
+						draggable: false,
+						editable: false,
+						visible: true,
+						zIndex: 2,
+					}}
+					radius={8}
+				/>
 
 				<Circle
 					center={center}
