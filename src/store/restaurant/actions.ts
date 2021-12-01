@@ -1,11 +1,15 @@
 // File imports
 import { RESTAURANT } from './actionTypes';
 import { ActionReturnType } from 'store/store.types';
-import { Restaurant } from './restaurant.types';
+import { AutoSearchDispatchPayload, SearchDispatchPayload } from './restaurant.types';
 
 export const restaurantActions = {
-	autoSearch: (payload: Restaurant): ActionReturnType => ({
+	autoSearch: (payload: AutoSearchDispatchPayload): ActionReturnType => ({
 		type: RESTAURANT.AUTO_SEARCH,
+		payload,
+	}),
+	search: (payload: SearchDispatchPayload): ActionReturnType => ({
+		type: RESTAURANT.SEARCH,
 		payload,
 	}),
 };

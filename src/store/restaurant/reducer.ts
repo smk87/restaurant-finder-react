@@ -1,10 +1,11 @@
 // File import
 import { ActionReturnType } from 'store/store.types';
 import { RESTAURANT } from './actionTypes';
-import { RestaurantActionReturnType, RestaurantState } from './restaurant.types';
+import { Restaurant, RestaurantActionReturnType, RestaurantState, SearchDispatchPayload } from './restaurant.types';
 
 const initialState: RestaurantState = {
 	searchResult: null,
+	searchText: '',
 };
 
 export const restaurantReducer = (
@@ -16,7 +17,16 @@ export const restaurantReducer = (
 		case RESTAURANT.AUTO_SEARCH:
 			return {
 				...state,
-				searchResult: action.payload || null,
+				searchResult: [action.payload?.result as Restaurant] || null,
+				searchText: '',
+			};
+
+		// Auto search
+		case RESTAURANT.SEARCH:
+			return {
+				...state,
+				searchResult: (action.payload?.result as Restaurant[]) || null,
+				searchText: (action.payload as SearchDispatchPayload)?.searchText || '',
 			};
 
 		// Default state

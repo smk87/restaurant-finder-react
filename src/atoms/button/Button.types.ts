@@ -9,4 +9,5 @@ export interface ButtonProps extends Stylable {
 	type?: ButtonType;
 	shape?: ButtonShape;
 	children: string;
+	disabled?: boolean;
 }

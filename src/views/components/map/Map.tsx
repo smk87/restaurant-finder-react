@@ -17,7 +17,7 @@ export const Map = ({ center, zoom = DEFAULT_ZOOM, markers }: MapProps): ReactEl
 		<LoadScript googleMapsApiKey={envs.GOOGLE_MAP_API_KEY || ''}>
 			<GoogleMap mapContainerClassName={mapContainer} center={center} zoom={zoom}>
 				{/* Child components, such as markers, info windows, etc. */}
-				{markers?.length === 0 && (
+				{!markers?.length && (
 					<InfoWindow position={yourPosition}>
 						<div className={yourLocation}>
 							<h4>{YOUR_LOCATION.LABEL}</h4>

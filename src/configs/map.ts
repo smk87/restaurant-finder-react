@@ -4,5 +4,5 @@ export const map = Object.freeze({
 		LONGITUDE: 90.4005284,
 		LABEL: 'Monstarlab Bangladesh',
 	},
-	DEFAULT_ZOOM: 16,
+	DEFAULT_ZOOM: 15,
 });

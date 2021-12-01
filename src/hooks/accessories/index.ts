@@ -1,2 +1,2 @@
 // This folder will contain generic hooks
-export {};
+export * from './useFormFields';
