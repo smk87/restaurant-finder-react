@@ -23,7 +23,7 @@ export const Root = (): ReactElement => {
 	const dispatch = useDispatch();
 
 	const [fields, handleFieldChange, setFields] = useFormFields({ searchText: searchedText });
-	const { root, searchFieldWrapper, buttonWrapper, button, mapWrapper } = useStyles();
+	const { root, searchFieldWrapper, buttonWrapper, button, mapWrapper, pageHeadingWrapper } = useStyles();
 	const { textCenter, fullWidth } = useGlobalStyles();
 
 	useEffect(() => {
@@ -36,6 +36,10 @@ export const Root = (): ReactElement => {
 
 	const handleSearch = () => {
 		dispatch(dispatchers.search({ searchText: fields.searchText }));
+	};
+
+	const handleClearSearch = () => {
+		dispatch(dispatchers.clearSearch());
 	};
 
 	const mapProps = searchedRestaurants
@@ -60,7 +64,7 @@ export const Root = (): ReactElement => {
 
 	return (
 		<div className={root}>
-			<Row className={fullWidth}>
+			<Row className={combineClasses(fullWidth, pageHeadingWrapper)}>
 				<Col flex={24}>
 					<h1 className={textCenter}>Find a near restaurant</h1>
 				</Col>
@@ -101,6 +105,10 @@ export const Root = (): ReactElement => {
 								: 'No'}{' '}
 							restaurant(s) found
 						</h3>
+
+						<div>
+							<Button onClick={handleClearSearch}>Clear Search</Button>
+						</div>
 					</Col>
 				)}
 			</Row>

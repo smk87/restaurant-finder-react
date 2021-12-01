@@ -5,7 +5,6 @@ import { createStyles } from '@mui/styles';
 export const useLayoutStyles = () =>
 	createStyles({
 		layout: {
-			height: '100vh',
 			display: 'flex',
 			flexDirection: 'row',
 			justifyContent: 'center',

@@ -12,4 +12,7 @@ export const restaurantActions = {
 		type: RESTAURANT.SEARCH,
 		payload,
 	}),
+	clearSearch: (): ActionReturnType => ({
+		type: RESTAURANT.CLEAR,
+	}),
 };

@@ -29,6 +29,14 @@ export const restaurantReducer = (
 				searchText: (action.payload as SearchDispatchPayload)?.searchText || '',
 			};
 
+		// Clear search
+		case RESTAURANT.CLEAR:
+			return {
+				...state,
+				searchResult: null,
+				searchText: '',
+			};
+
 		// Default state
 		default:
 			return state;

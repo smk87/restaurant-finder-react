@@ -9,9 +9,17 @@ export const useStyles = makeStyles(() =>
 			flexDirection: 'column',
 			justifyContent: 'center',
 			padding: '0 1rem',
+			height: 'max(100vh,55rem)',
+		},
+		pageHeadingWrapper: {
+			marginTop: '2rem',
+
+			'& h1': {
+				margin: 0,
+			},
 		},
 		searchFieldWrapper: {
-			marginTop: '4rem',
+			marginTop: '2rem',
 		},
 		buttonWrapper: {
 			display: 'flex',
@@ -22,7 +30,7 @@ export const useStyles = makeStyles(() =>
 			margin: '0 1rem',
 		},
 		mapWrapper: {
-			marginTop: '4rem',
+			marginTop: '2rem',
 		},
 	})
 );

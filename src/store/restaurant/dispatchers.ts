@@ -67,4 +67,9 @@ export const dispatchers = Object.freeze({
 				);
 			}
 		},
+	clearSearch:
+		() =>
+		(dispatch: Dispatch): void => {
+			dispatch(restaurantActions.clearSearch());
+		},
 });
