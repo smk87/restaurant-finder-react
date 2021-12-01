@@ -66,7 +66,7 @@ export const Root = (): ReactElement => {
 		<div className={root}>
 			<Row className={combineClasses(fullWidth, pageHeadingWrapper)}>
 				<Col flex={24}>
-					<h1 className={textCenter}>Find a near restaurant</h1>
+					<h1 className={textCenter}>Find nearby restaurants</h1>
 				</Col>
 			</Row>
 
@@ -92,7 +92,9 @@ export const Root = (): ReactElement => {
 					</div>
 
 					<div className={button}>
-						<Button onClick={handleAutoSearch}>Auto Search</Button>
+						<Button type='default' onClick={handleAutoSearch}>
+							Auto Search
+						</Button>
 					</div>
 				</Col>
 
