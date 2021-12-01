@@ -14,7 +14,7 @@ export const dispatchers = Object.freeze({
 			const randomPlace = results[getRandomInt(results.length - 1)];
 
 			dispatch(
-				restaurantActions.search({
+				restaurantActions.autoSearch({
 					name: randomPlace.name,
 					latitude: randomPlace.geocodes.main.latitude,
 					longitude: randomPlace.geocodes.main.longitude,
