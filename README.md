@@ -29,9 +29,10 @@
 9. `statics` folder is used for storing static data into it. As, our backend service `Foursquare` was having CORS issue, we have stored the static response from the given api endpoint: `https://api.foursquare.com/v3/places/search?query=restaurant&ll=23.7784828%2C90.3938461&radius=3000`.
 10. Note that, there are some coordinates mismatch in `Foursquare` API's response with google map
 11. We are showing multiple location as result when searching with keyword and single random location as result for automatic search.
-12. As we are using static data to load in the map without any API call, we have only used single action for each dispatch.
-13. `utils` folders have some generic functions which can be reused.
-14. We have written some unit tests for `utils` to check their functionality as, they can be reused in various places.
+12. There is also a feature to clear search result for the ease of user.
+13. As we are using static data to load in the map without any API call, we have only used single action for each dispatch.
+14. `utils` folders have some generic functions which can be reused.
+15. We have written some unit tests for `utils` to check their functionality as, they can be reused in various places.
 
 ## Setup
 
