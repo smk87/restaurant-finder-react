@@ -1,6 +1,7 @@
 // Library imports
 import { combineReducers, Reducer } from 'redux';
 
+// File imports
 import { restaurantReducer } from './restaurant';
 import { ApplicationState } from './store.types';
 

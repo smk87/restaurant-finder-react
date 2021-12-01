@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// Library import
+// Library imports
 import { AxiosResponse } from 'axios';
 
-// File import
+// File imports
 import { http } from 'plugins';
 import { AutoFindApiPayload } from './placesApi.types';
 import { endPoints } from 'apis';
